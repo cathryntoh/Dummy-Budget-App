@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/livingCostsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LivingCostsScreen">
@@ -12,90 +12,424 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/seafoam"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/costOfLiving"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Cost of Living"
             android:textColor="@color/light_green"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_gravity="center" />
+            android:textStyle="bold" />
     </FrameLayout>
 
     <TextView
         android:id="@+id/compareCities"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="Compare Cities"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/topBar"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/searchCity"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
-        android:hint="Add city to compare"
-        android:padding="12dp"
+        android:layout_marginTop="16dp"
         android:background="@android:drawable/edit_text"
+        android:hint="Add city to compare"
         android:inputType="text"
+        android:padding="12dp"
         android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@id/compareCities"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
-
-    <TextView
-        android:id="@+id/categories"
-        android:layout_width="95dp"
-        android:layout_height="371dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="280dp"
-        android:text="Rent (1 bed 1 bath)\n\nElectricity\n\nHeat\n\nWater\n\nGroceries\n\nEating out\n\nPublic transport\n\nFuel\n\nGym membership\n\nTaxes"
-        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/compareCities" />
 
     <TextView
         android:id="@+id/city1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="129dp"
+        android:layout_marginTop="50dp"
         android:text="Madison, WI"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="239dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchCity" />
 
-    <FrameLayout
-        android:id="@+id/cityFrame1"
-        android:layout_width="119dp"
-        android:layout_height="387dp"
-        android:background="@color/light_gray"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="270dp">
+    <!-- rent -->
+    <LinearLayout
+        android:id="@+id/rentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/city1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp">
 
         <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="XX,XXX" />
-    </FrameLayout>
+            android:layout_weight="1"
+            android:text="Rent"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="start" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="107dp"
-        android:layout_height="382dp"
-        android:background="@drawable/city_button"
-        android:padding="10dp"
-        android:text="+"
-        android:textColor="@android:color/white"
-        tools:layout_editor_absoluteX="275dp"
-        tools:layout_editor_absoluteY="272dp" />
+        <TextView
+            android:id="@+id/rentValue1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="$1,200"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/rentValue2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="35dp" />
+    </LinearLayout>
+
+    <!-- electricity -->
+    <LinearLayout
+        android:id="@+id/electricityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rentText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Electricity"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/electricityValue1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="$150"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/electricityValue2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="35dp" />
+    </LinearLayout>
+
+    <!-- heat -->
+    <LinearLayout
+        android:id="@+id/heatText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/electricityText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Heat"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/heatValue1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="$300"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/heatValue2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="35dp" />
+    </LinearLayout>
+
+    <!-- water -->
+    <LinearLayout
+        android:id="@+id/waterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/heatText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Water"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/waterValue1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="$200"
+            android:gravity="center"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/waterValue2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="35dp" />
+    </LinearLayout>
+
+    <!-- groceries -->
+    <LinearLayout
+        android:id="@+id/groceriesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/waterText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Groceries"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/groceriesValue1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="$100"
+            android:gravity="center"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/groceriesValue2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="35dp" />
+    </LinearLayout>
+
+    <!-- dining out -->
+    <LinearLayout
+        android:id="@+id/diningOutText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/groceriesText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dining Out"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/diningOutValue1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="$80"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/diningOutValue2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="35dp" />
+    </LinearLayout>
+
+    <!-- fuel -->
+    <LinearLayout
+        android:id="@+id/fuelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/diningOutText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Fuel"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/fuelValue1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="$50"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/fuelValue2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="35dp" />
+    </LinearLayout>
+
+    <!-- gym -->
+    <LinearLayout
+        android:id="@+id/gymText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fuelText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Gym"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/gymValue1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="$40"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/gymValue2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="35dp" />
+    </LinearLayout>
+
+    <!-- taxes -->
+    <LinearLayout
+        android:id="@+id/taxesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/gymText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Taxes"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/taxesValue1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="$200"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/taxesValue2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="35dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/city2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="50dp"
+        android:text="[Add A City]"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchCity" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
