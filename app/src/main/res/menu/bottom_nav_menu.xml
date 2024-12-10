@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_edit_budget"
+        android:icon="@drawable/bottomnav_dollaricon"
+        android:title="Edit Budget" />
+    <item
+        android:id="@+id/action_living_costs"
+        android:icon="@drawable/bottomnav_cityicon"
+        android:title="Compare Cities" />
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/bottomnav_houseicon"
+        android:title="Home" />
+    <item
+        android:id="@+id/action_budget_comparison"
+        android:icon="@drawable/bottomnav_graphicon"
+        android:title="Compare Budgets" />
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/bottomnav_settingsicon"
+        android:title="Settings" />
+</menu>

@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container_edit_your_budget"
+    android:id="@+id/editBudgetLayout"
     android:layout_width="match_parent"
     android:layout_height="917dp"
     android:background="@drawable/container_edit_your_budget">
