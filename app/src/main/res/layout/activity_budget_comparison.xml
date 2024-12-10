@@ -947,7 +947,7 @@
             android:background="@drawable/drawable_shape_25"
             android:scaleType="centerCrop" />
 
-        <ImageView
+      <!--  <ImageView
             android:layout_width="match_parent"
             android:layout_height="307.47dp"
             android:layout_marginLeft="262dp"
@@ -956,7 +956,7 @@
             android:alpha="0.20000000298023224"
             android:scaleType="centerCrop"
             android:src="@drawable/drawable_image_10" />
-
+-->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -1153,7 +1153,7 @@
             android:layout_gravity="left"
             android:background="@drawable/drawable_shape_39"
             android:scaleType="centerCrop" />
-
+<!--
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="307.47dp"
@@ -1163,7 +1163,7 @@
             android:alpha="0.20000000298023224"
             android:scaleType="centerCrop"
             android:src="@drawable/drawable_image_14" />
-
+-->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
