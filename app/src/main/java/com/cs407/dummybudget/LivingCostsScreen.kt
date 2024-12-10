@@ -3,6 +3,7 @@ package com.cs407.dummybudget
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -33,6 +34,15 @@ class LivingCostsScreen : AppCompatActivity() {
             insets
         }
 
+//        val searchCity = findViewById<AutoCompleteTextView>(R.id.searchCity)
+        val autoCompleteTextView: AutoCompleteTextView = findViewById(R.id.searchCity)
+        val addCityButton = findViewById<Button>(R.id.city2)
+
+        // when "Add City" button is clicked, take the user's cursor to the search bar
+        addCityButton.setOnClickListener {
+            autoCompleteTextView.requestFocus()
+        }
+
         // predefined cities and their cost of living
         val cities = listOf(
             CityCost("Madison", "WI", "$1,200", "$150", "$300", "$200", "$100", "$80", "$50", "$40", "$200"),
@@ -54,7 +64,7 @@ class LivingCostsScreen : AppCompatActivity() {
 
         val cityNames = cities.map { "${it.cityName}, ${it.stateAbbr}" }
 
-        val autoCompleteTextView: AutoCompleteTextView = findViewById(R.id.searchCity)
+//        val autoCompleteTextView: AutoCompleteTextView = findViewById(R.id.searchCity)
         val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, cityNames)
         autoCompleteTextView.setAdapter(adapter)
 
