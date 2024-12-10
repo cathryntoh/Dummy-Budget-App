@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "148683918735",
+    "firebase_url": "https://dummybudget407-default-rtdb.firebaseio.com",
+    "project_id": "dummybudget407",
+    "storage_bucket": "dummybudget407.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148683918735:android:ed50491465a03dee2e8ffa",
+        "android_client_info": {
+          "package_name": "com.cs407.dummybudget"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPRROvOs2avq4UUY66qzIDaKU9897xXVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
