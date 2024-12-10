@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePage">
+
+    <!-- Top Bar Container -->
+    <LinearLayout
+        android:id="@+id/container_frame"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:background="@drawable/container_frame"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingTop="8.5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="8.5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/HomeTopBar"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="left|center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Home"
+            android:textColor="#FFE9EFEC"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+
+
+    <!-- Your Budget Text -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Your Budget"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/lineChart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container_frame"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- Pie Chart -->
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp" />
+
+    <!-- Spending Trends Text -->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spending Trends"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pieChart"
+        app:layout_constraintBottom_toTopOf="@id/lineChart"
+        android:layout_marginTop="35dp"
+        android:textStyle="bold" />
+
+    <!-- Line Chart -->
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/textView3"
+        android:layout_marginTop="50dp"
+        android:layout_height="250dp" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
