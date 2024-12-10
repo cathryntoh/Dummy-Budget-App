@@ -1,6 +1,7 @@
 package com.cs407.dummybudget
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
@@ -34,34 +35,6 @@ class LivingCostsScreen : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
-
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-
-        bottomNavigationView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.action_edit_budget -> {
-                    startActivity(Intent(this, EditBudget::class.java))
-                    true
-                }
-                R.id.action_living_costs -> {
-                    startActivity(Intent(this, LivingCostsScreen::class.java))
-                    true
-                }
-                R.id.action_home -> {
-                    startActivity(Intent(this, EditBudget::class.java))
-                    true
-                }
-                R.id.action_budget_comparison -> {
-                    startActivity(Intent(this, BudgetComparison::class.java))
-                    true
-                }
-                R.id.action_settings -> {
-                    startActivity(Intent(this, EditBudget::class.java))
-                    true
-                }
-                else -> false
-            }
         }
 
         val autoCompleteTextView: AutoCompleteTextView = findViewById(R.id.searchCity)
@@ -102,6 +75,35 @@ class LivingCostsScreen : AppCompatActivity() {
             val selectedCityNameOnly = selectedCityName.split(",")[0]
             val selectedCity = cities.find { it.cityName == selectedCityNameOnly }
             selectedCity?.let { updateCityDetails(it) }
+        }
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNavigationView.selectedItemId = R.id.action_living_costs
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.action_edit_budget -> {
+                    startActivity(Intent(this, EditBudget::class.java))
+                    true
+                }
+                R.id.action_living_costs -> {
+                    startActivity(Intent(this, LivingCostsScreen::class.java))
+                    true
+                }
+                R.id.action_home -> {
+                    startActivity(Intent(this, HomePage::class.java))
+                    true
+                }
+                R.id.action_budget_comparison -> {
+                    startActivity(Intent(this, BudgetComparison::class.java))
+                    true
+                }
+                R.id.action_settings -> {
+                    startActivity(Intent(this, Settings::class.java))
+                    true
+                }
+                else -> false
+            }
         }
 
     }
