@@ -1,5 +1,6 @@
 package com.cs407.dummybudget
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -23,14 +24,14 @@ import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.highlight.Highlight
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.github.mikephil.charting.utils.ColorTemplate
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomePage : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_home_page)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.homeLayout)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -40,6 +41,35 @@ class HomePage : AppCompatActivity() {
         createLineChart(lineChart)
         val pieChart: PieChart = findViewById(R.id.pieChart)
         createPyChart(pieChart, graphTitle)
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNavigationView.selectedItemId = R.id.action_home
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.action_edit_budget -> {
+                    startActivity(Intent(this, EditBudget::class.java))
+                    true
+                }
+                R.id.action_living_costs -> {
+                    startActivity(Intent(this, LivingCostsScreen::class.java))
+                    true
+                }
+                R.id.action_home -> {
+                    startActivity(Intent(this, HomePage::class.java))
+                    true
+                }
+                R.id.action_budget_comparison -> {
+                    startActivity(Intent(this, BudgetComparison::class.java))
+                    true
+                }
+                R.id.action_settings -> {
+                    startActivity(Intent(this, Settings::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
 
     }
 
