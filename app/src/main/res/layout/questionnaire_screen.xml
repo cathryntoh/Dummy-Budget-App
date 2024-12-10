@@ -50,15 +50,17 @@
 
     <View
         android:id="@+id/rectangle_1"
-        android:layout_width="399dp"
-        android:layout_height="760dp"
+        android:layout_width="387dp"
+        android:layout_height="723dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/rectangle_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frame_3" />
+        app:layout_constraintTop_toBottomOf="@+id/frame_3"
+        app:layout_constraintVertical_bias="0.533" />
 
     <View
         android:id="@+id/rectangle_"
@@ -67,10 +69,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="236dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="73dp"
         android:background="@drawable/rectangle_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/current_loc" />
+        app:layout_constraintTop_toTopOf="@+id/rectangle_1" />
 
     <TextView
         android:id="@+id/current_loc"
@@ -78,8 +80,8 @@
         android:layout_height="29dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="40dp"
         android:gravity="top"
         android:text="@string/current_loc"
         android:textAppearance="@style/current_loc"
@@ -91,7 +93,7 @@
         android:id="@+id/yearly_salary"
         android:layout_width="119dp"
         android:layout_height="29dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="48dp"
         android:gravity="top"
         android:text="@string/yearly_salary"
@@ -570,31 +572,27 @@
         app:layout_constraintStart_toStartOf="@+id/rectangle_20"
         app:layout_constraintTop_toTopOf="@+id/rectangle_20" />
 
-    <View
+    <FrameLayout
         android:id="@+id/rectangle_25"
         android:layout_width="154dp"
         android:layout_height="35dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="36dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rectangle_4"
-        app:layout_constraintBottom_toTopOf="@+id/rectangle_26"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_36" />
 
-    <View
+    <FrameLayout
         android:id="@+id/rectangle_26"
         android:layout_width="154dp"
         android:layout_height="35dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="292dp"
         android:background="@drawable/rectangle_4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_1" />
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_25" />
 
-    <View
+    <FrameLayout
         android:id="@+id/rectangle_27"
         android:layout_width="154dp"
         android:layout_height="35dp"
@@ -607,7 +605,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_26" />
 
-    <View
+    <FrameLayout
         android:id="@+id/rectangle_28"
         android:layout_width="154dp"
         android:layout_height="35dp"
@@ -620,7 +618,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_27" />
 
-    <View
+    <FrameLayout
         android:id="@+id/rectangle_29"
         android:layout_width="154dp"
         android:layout_height="35dp"
@@ -633,7 +631,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_28" />
 
-    <View
+    <FrameLayout
         android:id="@+id/rectangle_43"
         android:layout_width="154dp"
         android:layout_height="35dp"
@@ -646,7 +644,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_29" />
 
-    <View
+    <FrameLayout
         android:id="@+id/rectangle_36"
         android:layout_width="154dp"
         android:layout_height="35dp"
@@ -658,13 +656,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/set_your_bu" />
 
+
     <View
         android:id="@+id/red_box"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="172dp"
+        android:layout_marginBottom="152dp"
         android:background="@drawable/box_red"
         android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -678,11 +677,11 @@
         android:layout_height="27.25dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="172dp"
+        android:layout_marginBottom="152dp"
         android:background="@drawable/box_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintHorizontal_bias="0.348"
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
@@ -691,7 +690,7 @@
         android:layout_height="27.25dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="172dp"
+        android:layout_marginBottom="152dp"
         android:background="@drawable/box_purple"
         android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -705,7 +704,7 @@
         android:layout_height="27.25dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="172dp"
+        android:layout_marginBottom="152dp"
         android:background="@drawable/box_violet"
         android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -719,12 +718,13 @@
         android:layout_height="27dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/box_beige"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <View
         android:id="@+id/blue_box"
@@ -732,7 +732,7 @@
         android:layout_height="27dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/box_blue"
         android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -746,11 +746,12 @@
         android:layout_height="27dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/box_pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
