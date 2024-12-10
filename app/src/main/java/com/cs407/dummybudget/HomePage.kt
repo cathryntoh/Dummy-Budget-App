@@ -3,12 +3,15 @@ package com.cs407.dummybudget
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.charts.PieChart
+import com.github.mikephil.charting.components.Description
+import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
@@ -32,30 +35,15 @@ class HomePage : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val graphTitle: TextView = findViewById(R.id.textView3)
         val lineChart: LineChart = findViewById(R.id.lineChart)
-
-        // Creating a list of Entry objects (x, y values)
-        val entries = listOf(
-            Entry(0f, 1f),
-            Entry(1f, 2f),
-            Entry(2f, 3f),
-            Entry(3f, 5f)
-        )
-
-        // Create a dataset and give it a type (LineDataSet)
-        val dataSet = LineDataSet(entries, "Label")
-
-        // Create a LineData object with the dataset
-        val lineData = LineData(dataSet)
-
-        // Set the data for the chart
-        lineChart.data = lineData
-
-        // Refresh the chart to show data
-        lineChart.invalidate()
-
-        // Pie Chart Code (New)
+        createLineChart(lineChart)
         val pieChart: PieChart = findViewById(R.id.pieChart)
+        createPyChart(pieChart, graphTitle)
+
+    }
+
+    private fun createPyChart(pieChart: PieChart, graphTitle: TextView) {
         val pieEntries = listOf(
             PieEntry(15f, "Housing").apply { data = "Housing" },
             PieEntry(25f, "Transportation").apply { data = "Transportation" },
@@ -97,14 +85,70 @@ class HomePage : AppCompatActivity() {
             override fun onValueSelected(e: Entry?, h: Highlight?) {
                 val category = e?.data as? String ?: "" // Get the category label
                 pieChart.centerText = category // Set the category as the center text
+                graphTitle.text = "Spending Trends" + " - " + category
             }
 
             override fun onNothingSelected() {
                 pieChart.centerText = "" // Reset to default center text
+                graphTitle.text = "Spending Trends"
             }
         })
-
-
     }
 
+    private fun createLineChart(lineChart: LineChart) {
+        // Sample data (replace with your actual data)
+        val entries = listOf(
+            Entry(0f, 10f),
+            Entry(1f, 15f),
+            Entry(2f, 8f),
+            Entry(3f, 25f),
+            Entry(4f, 19f)
+        )
+
+        val dataSet = LineDataSet(entries, "Spending Trend")
+
+        // Line chart styling
+        dataSet.color = Color.parseColor("#36729e") // Set line color
+        dataSet.lineWidth = 3f // Set line width
+        dataSet.setDrawCircles(false) // Hide data point circles
+        dataSet.mode = LineDataSet.Mode.CUBIC_BEZIER // Smooth curves
+
+        val lineData = LineData(dataSet)
+        lineChart.data = lineData
+
+        // Axis styling
+        lineChart.xAxis.position = XAxis.XAxisPosition.BOTTOM // X-axis at the bottom
+        lineChart.xAxis.axisLineWidth = 2f
+        lineChart.axisLeft.axisLineWidth = 2f
+        lineChart.xAxis.setDrawGridLines(false) // Hide X-axis grid lines
+        lineChart.axisLeft.setDrawGridLines(false) // Hide Y-axis grid lines
+        lineChart.axisRight.isEnabled = false // Disable right-side Y-axis
+        lineChart.xAxis.setDrawLabels(true) // Show X-axis labels
+        lineChart.axisLeft.setDrawLabels(true) // Show Y-axis labels
+        lineChart.description.isEnabled = false // Hide description
+        lineChart.legend.isEnabled = false // Hide legend
+
+
+        // Background and animation
+        lineChart.setDrawGridBackground(false) // Hide grid background
+        lineChart.animateX(1000) // Animate chart horizontally
+
+        // X-axis labeling
+        lineChart.xAxis.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                return "Week ${value.toInt()}" // Add 1 to start from Week 1
+            }
+        }
+
+        // Y-axis labeling
+        lineChart.axisLeft.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                return "$" + value.toInt() // Add "$" sign
+            }
+        }
+
+        lineChart.xAxis.labelCount = 4 // Set the desired number of labels
+
+        lineChart.invalidate()
+    }
 }
