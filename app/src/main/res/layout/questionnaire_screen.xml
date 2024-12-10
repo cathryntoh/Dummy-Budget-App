@@ -62,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/frame_3"
         app:layout_constraintVertical_bias="0.533" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_"
         android:layout_width="138dp"
         android:layout_height="27.25dp"
@@ -72,6 +72,8 @@
         android:layout_marginTop="73dp"
         android:background="@drawable/rectangle_2"
         app:layout_constraintStart_toStartOf="parent"
+        android:hint="Salary"
+        android:textSize="14sp"
         app:layout_constraintTop_toTopOf="@+id/rectangle_1" />
 
     <TextView
@@ -114,7 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frame_3" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_2"
         android:layout_width="138dp"
         android:layout_height="27.25dp"
@@ -122,6 +124,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="44dp"
         android:layout_marginTop="4dp"
+        android:hint="Address"
+        android:textSize="14sp"
         android:background="@drawable/rectangle_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/current_loc" />
@@ -153,34 +157,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="49dp"
-        android:layout_height="17dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/address"
-        android:textAppearance="@style/address"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_2"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_2" />
-
-    <TextView
-        android:id="@+id/salary"
-        android:layout_width="42dp"
-        android:layout_height="18dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/salary"
-        android:textAppearance="@style/salary"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -193,7 +169,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_3"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -202,10 +178,12 @@
         android:layout_marginTop="68dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rectangle_3"
+        android:hint="Max"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_11"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -214,10 +192,12 @@
         android:layout_marginTop="216dp"
         android:layout_marginEnd="108dp"
         android:background="@drawable/rectangle_3"
+        android:hint="Min"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_12"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -226,10 +206,12 @@
         android:layout_marginTop="216dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rectangle_3"
+        android:hint="Max"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_20"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -238,10 +220,12 @@
         android:layout_marginTop="264dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rectangle_3"
+        android:hint="Max"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_22"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -250,10 +234,12 @@
         android:layout_marginTop="312dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rectangle_3"
+        android:hint="Max"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_19"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -262,10 +248,12 @@
         android:layout_marginTop="264dp"
         android:layout_marginEnd="108dp"
         android:background="@drawable/rectangle_3"
+        android:hint="Min"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_21"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -274,10 +262,12 @@
         android:layout_marginTop="312dp"
         android:layout_marginEnd="108dp"
         android:background="@drawable/rectangle_3"
+        android:hint="Min"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_23"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -286,10 +276,12 @@
         android:layout_marginTop="364dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rectangle_3"
+        android:hint="Max"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_24"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -299,9 +291,11 @@
         android:layout_marginEnd="108dp"
         android:background="@drawable/rectangle_3"
         app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Min"
+        android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_9"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -310,10 +304,12 @@
         android:layout_marginTop="164dp"
         android:layout_marginEnd="108dp"
         android:background="@drawable/rectangle_3"
+        android:hint="Min"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_5"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -323,9 +319,11 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/rectangle_3"
         app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Max"
+        android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_6"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -334,10 +332,12 @@
         android:layout_marginTop="116dp"
         android:layout_marginEnd="108dp"
         android:background="@drawable/rectangle_3"
+        android:hint="Min"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_7"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -346,10 +346,12 @@
         android:layout_marginTop="164dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rectangle_3"
+        android:hint="Max"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
 
-    <View
+    <EditText
         android:id="@+id/rectangle_4"
         android:layout_width="75dp"
         android:layout_height="27.25dp"
@@ -358,219 +360,10 @@
         android:layout_marginTop="68dp"
         android:layout_marginEnd="108dp"
         android:background="@drawable/rectangle_3"
+        android:hint="Min"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line_20" />
-
-    <TextView
-        android:id="@+id/min"
-        android:layout_width="22.83dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/min"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_4"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_4" />
-
-    <TextView
-        android:id="@+id/min2"
-        android:layout_width="22.83dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/min"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_6"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_6" />
-
-    <TextView
-        android:id="@+id/min3"
-        android:layout_width="22.83dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/min"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_9"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_9" />
-
-    <TextView
-        android:id="@+id/min4"
-        android:layout_width="22.83dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/min"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_11"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_11" />
-
-    <TextView
-        android:id="@+id/min5"
-        android:layout_width="22.83dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/min"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_19"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_19" />
-
-    <TextView
-        android:id="@+id/min6"
-        android:layout_width="22.83dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-
-        android:text="@string/min"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_21"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_21" />
-
-    <TextView
-        android:id="@+id/min7"
-        android:layout_width="22.83dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/min"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_24"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_24" />
-
-    <TextView
-        android:id="@+id/max"
-        android:layout_width="30dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/max"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_8"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_8" />
-
-    <TextView
-        android:id="@+id/max2"
-        android:layout_width="30dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/max"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_5"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_5" />
-
-    <TextView
-        android:id="@+id/max3"
-        android:layout_width="30dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/max"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_7"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_7" />
-
-    <TextView
-        android:id="@+id/max4"
-        android:layout_width="30dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/max"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_12"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_12" />
-
-    <TextView
-        android:id="@+id/max5"
-        android:layout_width="30dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/max"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_22"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_22" />
-
-    <TextView
-        android:id="@+id/max7"
-        android:layout_width="30dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/max"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_23"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_23" />
-
-    <TextView
-        android:id="@+id/max6"
-        android:layout_width="30dp"
-        android:layout_height="18dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:gravity="top"
-        android:text="@string/max"
-        android:textAppearance="@style/max"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_20"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_20" />
 
     <FrameLayout
         android:id="@+id/rectangle_25"
