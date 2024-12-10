@@ -1,7 +1,0 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/seafoam" /> <!-- Background color -->
-    <corners android:radius="4dp" /> <!-- Optional: rounded corners -->
-    <size
-        android:width="48dp"
-        android:height="48dp" /> <!-- Size of the background -->
-</shape>

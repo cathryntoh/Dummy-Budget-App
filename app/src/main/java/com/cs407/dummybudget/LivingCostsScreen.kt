@@ -1,5 +1,6 @@
 package com.cs407.dummybudget
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 data class CityCost(
     val cityName: String,
@@ -34,7 +36,34 @@ class LivingCostsScreen : AppCompatActivity() {
             insets
         }
 
-//        val searchCity = findViewById<AutoCompleteTextView>(R.id.searchCity)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.action_edit_budget -> {
+                    startActivity(Intent(this, EditBudget::class.java))
+                    true
+                }
+                R.id.action_living_costs -> {
+                    startActivity(Intent(this, LivingCostsScreen::class.java))
+                    true
+                }
+                R.id.action_home -> {
+                    startActivity(Intent(this, EditBudget::class.java))
+                    true
+                }
+                R.id.action_budget_comparison -> {
+                    startActivity(Intent(this, BudgetComparison::class.java))
+                    true
+                }
+                R.id.action_settings -> {
+                    startActivity(Intent(this, EditBudget::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
+
         val autoCompleteTextView: AutoCompleteTextView = findViewById(R.id.searchCity)
         val addCityButton = findViewById<Button>(R.id.city2)
 
@@ -64,7 +93,6 @@ class LivingCostsScreen : AppCompatActivity() {
 
         val cityNames = cities.map { "${it.cityName}, ${it.stateAbbr}" }
 
-//        val autoCompleteTextView: AutoCompleteTextView = findViewById(R.id.searchCity)
         val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, cityNames)
         autoCompleteTextView.setAdapter(adapter)
 

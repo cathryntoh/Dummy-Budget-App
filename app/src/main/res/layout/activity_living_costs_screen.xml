@@ -463,6 +463,7 @@
         app:itemTextAppearanceInactive="@style/BottomNavigationView"
         app:labelVisibilityMode="unlabeled"
         app:itemActiveIndicatorStyle="@android:color/transparent"
+        app:itemIconTint="@color/bottom_nav_icon_colors"
         app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

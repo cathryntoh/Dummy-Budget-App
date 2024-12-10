@@ -1,4 +1,0 @@
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/bottomnav_iconbackground" />
-    <item android:drawable="@drawable/bottomnav_cityicon" />
-</layer-list>
