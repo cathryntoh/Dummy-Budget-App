@@ -108,9 +108,17 @@ class LivingCostsScreen : AppCompatActivity() {
 
     }
 
-    // update the placeholders
     private fun updateCityDetails(city: CityCost) {
-        findViewById<TextView>(R.id.city2).text = city.cityName + ", " + city.stateAbbr
+        findViewById<TextView>(R.id.rentValue1).text = "$${SharedData.budgetCategories["Rent"] ?: 1200}"
+        findViewById<TextView>(R.id.electricityValue1).text = "$${SharedData.budgetCategories["Electricity"] ?: 150}"
+        findViewById<TextView>(R.id.heatValue1).text = "$${SharedData.budgetCategories["Heat"] ?: 300}"
+        findViewById<TextView>(R.id.waterValue1).text = "$${SharedData.budgetCategories["Water"] ?: 200}"
+        findViewById<TextView>(R.id.groceriesValue1).text = "$${SharedData.budgetCategories["Groceries"] ?: 100}"
+        findViewById<TextView>(R.id.diningOutValue1).text = "$${SharedData.budgetCategories["Dining Out"] ?: 80}"
+        findViewById<TextView>(R.id.fuelValue1).text = "$${SharedData.budgetCategories["Fuel"] ?: 50}"
+        findViewById<TextView>(R.id.gymValue1).text = "$${SharedData.budgetCategories["Gym"] ?: 40}"
+        findViewById<TextView>(R.id.taxesValue1).text = "$${SharedData.budgetCategories["Taxes"] ?: 200}"
+
         findViewById<TextView>(R.id.rentValue2).text = city.rent
         findViewById<TextView>(R.id.electricityValue2).text = city.electricity
         findViewById<TextView>(R.id.heatValue2).text = city.heat

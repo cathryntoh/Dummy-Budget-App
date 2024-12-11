@@ -6,4 +6,19 @@
     <color name="light_green">#E9EFEC</color>
     <color name="seafoam">#6A9C89</color>
     <color name="dark_green">#16423C</color>
+    <color name="blue">#2196F3</color>
+    <color name="orangey_red">#FF5722</color>
+    <color name="light_background">#F7F7F7</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+
+    <color name="red">#FF5722</color>
+    <color name="yellow">#FFC107</color>
+    <color name="orange">#FF9800</color>
+    <color name="green">#4CAF50</color>
+    <color name="purple">#9C27B0</color>
+    <color name="teal">#009688</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="pink">#E91E63</color>
+    <color name="gray">#9E9E9E</color>
 </resources>

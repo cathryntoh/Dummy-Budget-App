@@ -22,5 +22,5 @@
     <string name="submit">Submit</string>
     <string name="min">Min</string>
     <string name="max">Max</string>
-
+    <string name="city_state_format">%1$s, %2$s</string>
 </resources>

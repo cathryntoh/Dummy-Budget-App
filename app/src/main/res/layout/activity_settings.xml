@@ -25,193 +25,184 @@
             android:textStyle="bold" />
     </FrameLayout>
 
+    <!-- Search Bar -->
     <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Search for a setting..."
-        android:inputType="text"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topBar" />
-
-    <LinearLayout
-        android:id="@+id/account_button"
+        android:id="@+id/searchSettings"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="?android:attr/selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        android:orientation="vertical"
-        android:padding="16dp"
+        android:layout_marginTop="20dp"
+        android:hint="Search for a setting..."
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText">
+        app:layout_constraintTop_toBottomOf="@+id/topBar"
+        app:layout_constraintWidth_percent="0.9" />
 
+    <!-- Settings Categories -->
+    <LinearLayout
+        android:id="@+id/settingsCategories"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchSettings">
+
+        <!-- Account Section -->
         <LinearLayout
+            android:id="@+id/accountButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0px"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
 
-            <!-- Left Icon -->
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@android:drawable/ic_menu_manage"
-                app:tint="@color/black"></ImageView>
+                app:tint="@color/black" />
 
-            <!-- Text -->
             <TextView
-                android:id="@+id/text_account"
+                android:id="@+id/accountText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_weight="1"
-                android:text="Account"
+                android:layout_marginStart="16dp"
+                android:text="Change Password"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <!-- Right Arrow Icon -->
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@android:drawable/ic_menu_more"
                 app:tint="@color/black" />
-
         </LinearLayout>
 
-        <!-- Bottom Line -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/material_dynamic_tertiary30" />
 
+        <!-- Notifications Section -->
         <LinearLayout
+            android:id="@+id/notificationsButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50px"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
 
-            <!-- Left Icon -->
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@android:drawable/ic_menu_manage"
-                app:tint="@color/black"></ImageView>
+                app:tint="@color/black" />
 
-            <!-- Text -->
             <TextView
-                android:id="@+id/text_notifs"
+                android:id="@+id/notificationsText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_weight="1"
+                android:layout_marginStart="16dp"
                 android:text="Notifications"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <!-- Right Arrow Icon -->
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@android:drawable/ic_menu_more"
                 app:tint="@color/black" />
-
         </LinearLayout>
 
-        <!-- Bottom Line -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/material_dynamic_tertiary30" />
 
+        <!-- Privacy & Security Section -->
         <LinearLayout
+            android:id="@+id/privacyButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50px"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
 
-            <!-- Left Icon -->
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@android:drawable/ic_menu_manage"
-                app:tint="@color/black"></ImageView>
+                app:tint="@color/black" />
 
-            <!-- Text -->
             <TextView
-                android:id="@+id/text_pands"
+                android:id="@+id/privacyText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_weight="1"
-                android:text="Privacy &amp; Security"
+                android:layout_marginStart="16dp"
+                android:text="Delete Account"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <!-- Right Arrow Icon -->
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@android:drawable/ic_menu_more"
                 app:tint="@color/black" />
-
         </LinearLayout>
 
-        <!-- Bottom Line -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/material_dynamic_tertiary30" />
 
+        <!-- Help & Support Section -->
         <LinearLayout
+            android:id="@+id/helpButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50px"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
 
-            <!-- Left Icon -->
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@android:drawable/ic_menu_manage"
-                app:tint="@color/black"></ImageView>
+                app:tint="@color/black" />
 
-            <!-- Text -->
             <TextView
-                android:id="@+id/text_help"
+                android:id="@+id/helpText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_weight="1"
-                android:text="Help &amp; Support"
+                android:layout_marginStart="16dp"
+                android:text="Help and Support"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <!-- Right Arrow Icon -->
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@android:drawable/ic_menu_more"
                 app:tint="@color/black" />
-
         </LinearLayout>
 
-        <!-- Bottom Line -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/material_dynamic_tertiary30" />
-
-
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
