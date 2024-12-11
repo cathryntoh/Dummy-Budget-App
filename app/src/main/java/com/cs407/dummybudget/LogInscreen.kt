@@ -6,17 +6,19 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 
-class MainActivity : AppCompatActivity() {
+class LogInscreen : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_screen)
 
-        // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
 
         val emailInput = findViewById<EditText>(R.id.email_input)
@@ -24,12 +26,10 @@ class MainActivity : AppCompatActivity() {
         val loginButton = findViewById<Button>(R.id.login_button)
         val signUpLink = findViewById<TextView>(R.id.sign_up_link)
 
-        // Handle Login Button Click
         loginButton.setOnClickListener {
             val email = emailInput.text.toString()
             val password = passwordInput.text.toString()
 
-            // Firebase Login
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
                 }
         }
 
-        // Handle Sign-Up Link Click
         signUpLink.setOnClickListener {
             startActivity(Intent(this, RegisterScreen::class.java))
         }
