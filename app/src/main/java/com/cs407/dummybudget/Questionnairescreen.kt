@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class QuestionnaireActivity : AppCompatActivity() {
 
@@ -19,7 +20,7 @@ class QuestionnaireActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.questionnaire_screen)
+        setContentView(R.layout.activity_questionnaire_screen)
 
         val draggableBlocks = arrayOf(
             findViewById<View>(R.id.red_box),

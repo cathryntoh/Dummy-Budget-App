@@ -1,5 +1,5 @@
 # Dummy Budget App
-hi
+
 The Dummy Budget App is a comprehensive Android application that helps users manage their finances effectively. It allows users to set budgets, track expenses, compare costs across cities, and visualize financial data through interactive dashboards.
 
 ---

@@ -36,6 +36,7 @@ class HomePage : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         val graphTitle: TextView = findViewById(R.id.textView3)
         val lineChart: LineChart = findViewById(R.id.lineChart)
         createLineChart(lineChart)
